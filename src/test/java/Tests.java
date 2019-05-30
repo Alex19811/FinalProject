@@ -15,7 +15,7 @@ public class Tests extends BaseTest {
 
     @Test
     public void checkItemsCounter() throws InterruptedException {
-        mainPage.clickLanguageAutomation ();
+      //  mainPage.clickLanguageAutomation ();
         mainPage.clickGoToHomeDecor();
 
 

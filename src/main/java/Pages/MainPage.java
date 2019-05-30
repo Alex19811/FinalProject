@@ -1,5 +1,6 @@
 package Pages;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -16,11 +17,11 @@ public class MainPage extends BasePage {
         return new MainPage();
     }
 
-    public MainPage clickLanguageAutomation() {
-        getDriver().findElement(SelectLanguage);
-        Select sel = new Select(SelectLanguage);
-        sel.selectByVisibleText("Automation");
-    }
+//    public MainPage clickLanguageAutomation() {
+//        getDriver().findElement(SelectLanguage);
+//        Select sel = new Select (SelectLanguage);
+//        sel.selectByVisibleText("Automation");
+//    }
 
 
 
