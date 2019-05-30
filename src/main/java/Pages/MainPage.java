@@ -17,11 +17,11 @@ public class MainPage extends BasePage {
         return new MainPage();
     }
 
-//    public MainPage clickLanguageAutomation() {
-//        getDriver().findElement(SelectLanguage);
-//        Select sel = new Select (SelectLanguage);
-//        sel.selectByVisibleText("Automation");
-//    }
+    public MainPage clickLanguageAutomation() {
+        getDriver().findElement(SelectLanguage);
+        Select sel = new Select (SelectLanguage);
+        sel.selectByVisibleText("Automation");
+    }
 
 
 
