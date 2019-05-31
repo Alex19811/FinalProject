@@ -6,7 +6,8 @@ public class Tests extends BaseTest {
 
     MainPage mainPage;
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod
+            //(alwaysRun = true)
     public void xmsinUnit() {
 
         mainPage = new MainPage();
@@ -14,9 +15,9 @@ public class Tests extends BaseTest {
 
 
     @Test
-    public void checkItemsCounter() throws InterruptedException {
-        mainPage.clickLanguageAutomation ();
-        mainPage.clickGoToHomeDecor();
+    public void checkItemsCounter() throws InterruptedException
+    {
+        mainPage.clickLanguageAutomation ().clickGoToHomeDecor();
 
 
                 Thread.sleep(3000);
