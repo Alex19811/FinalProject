@@ -38,6 +38,7 @@ public class MainPage extends BasePage {
 //        return null;
 
         Actions builder = new Actions(driver);
+       // Actions(driver).moveToElement(element).perform();
         builder.moveToElement((WebElement) GoToHomeDecor).click((WebElement) GoToHomeDecor);
 //        Action mouseoverAndClick = builder.build();
 //        mouseoverAndClick.perform();
