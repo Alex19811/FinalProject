@@ -1,4 +1,6 @@
+
 import Pages.MainPage;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -6,8 +8,7 @@ public class Tests extends BaseTest {
 
     MainPage mainPage;
 
-    @BeforeMethod
-            //(alwaysRun = true)
+    @BeforeMethod (alwaysRun = true)
     public void xmsinUnit() {
 
         mainPage = new MainPage();
@@ -17,7 +18,9 @@ public class Tests extends BaseTest {
     @Test
     public void checkItemsCounter() throws InterruptedException
     {
-        mainPage.clickLanguageAutomation ().clickGoToHomeDecor();
+        mainPage.clickLanguageAutomation ().clickGoToHomeDecor().clickGoToElectronics();
+
+
 
 
                 Thread.sleep(3000);
