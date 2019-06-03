@@ -33,22 +33,22 @@ public class MainPage extends BasePage {
 
 
     public MainPage clickGoToHomeDecor() {
-//        getDriver().findElement(goToHomeDecor).click();
-//        return new MainPage();
-//    }
+        getDriver().findElement(goToHomeDecor).click();
+        return new MainPage();
+    }
 //
 //    public MainPage clickGoToElectronics() {
 //        getDriver().findElement(goToElectronics).click();
 //        return new MainPage();
 //    }
 
-        Actions builder = new Actions(driver);
-        final Actions = builder.moveToElement(goToHomeDecor.findElement()).click(goToElectronics);
-        Action mouseoverAndClick = builder.build();
-        mouseoverAndClick.perform();
-        return new MainPage();
+//        Actions builder = new Actions(driver);
+//        final Actions = builder.moveToElement(goToHomeDecor.findElement()).click(goToElectronics);
+//        Action mouseoverAndClick = builder.build();
+//        mouseoverAndClick.perform();
+//        return new MainPage();
     }
-    }
+
 
 //        public ElectronicsPage goToElectronicsPage() {
 //            Actions actions = new Actions(getDriver());
