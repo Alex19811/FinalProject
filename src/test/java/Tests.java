@@ -20,7 +20,9 @@ public class Tests extends BaseTest {
     {
         mainPage.clickLanguageAutomation()
                 .clickGoToHomeDecor()
-                .clickOnElectronicsContainer();
+                .clickOnElectronicsContainer()
+                .clickShowAsListButton()
+                .setNumberOfProducts(25);
 
 
                 Thread.sleep(3000);
