@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-        @BeforeMethod(alwaysRun = true)
-    public void webDriverManager () {
+    @BeforeMethod(alwaysRun = true)
+    public void webDriverManager() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         //driver.manage().window().maximize();

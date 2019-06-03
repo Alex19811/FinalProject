@@ -1,17 +1,14 @@
 package Pages;
 
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 
 public class MainPage extends BasePage {
 
     private By SelectLanguage = By.id("select-language");
-    private By goToHomeDecor = By.cssSelector ("//a[contains(@class,'level0') and text()='Home & Decor']");
+    private By goToHomeDecor = By.xpath ("//a[contains(@class,'level0') and text()='Home & Decor']");
     private By goToElectronics = By.cssSelector("[class='level1 nav-4-3'] .level1");
 
 
@@ -28,13 +25,14 @@ public class MainPage extends BasePage {
         WebElement elementSpisok = driver.findElement(SelectLanguage);
         Select sel = new Select(elementSpisok);
         sel.selectByVisibleText("Automation");
-        return null;
+
+        return this;
     }
 
 
-    public MainPage clickGoToHomeDecor() {
+    public HomeAndDecor clickGoToHomeDecor() {
         getDriver().findElement(goToHomeDecor).click();
-        return new MainPage();
+        return new HomeAndDecor();
     }
 //
 //    public MainPage clickGoToElectronics() {

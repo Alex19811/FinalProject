@@ -18,7 +18,9 @@ public class Tests extends BaseTest {
     @Test
     public void checkItemsCounter() throws InterruptedException
     {
-        mainPage.clickLanguageAutomation ().clickGoToHomeDecor();
+        mainPage.clickLanguageAutomation()
+                .clickGoToHomeDecor()
+                .clickOnElectronicsContainer();
 
 
                 Thread.sleep(3000);
