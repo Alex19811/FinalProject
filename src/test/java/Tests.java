@@ -92,7 +92,7 @@ public class Tests extends BaseTest {
     @Test
     public void checkSale() throws InterruptedException {
         mainPage.clickLanguageAutomation()
-                .clickGoToSale()
+                .clickGoToSale();
 
 
 
