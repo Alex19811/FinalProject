@@ -1,4 +1,5 @@
 
+import Pages.LogInPage;
 import Pages.MainPage;
 
 import org.testng.annotations.BeforeMethod;
@@ -70,18 +71,47 @@ public class Tests extends BaseTest {
     //5
     @Test
     public void checkAddToWishlist() throws InterruptedException {
-        mainPage.clickLanguageAutomation()
-                .clickGoToHomeDecor()
+        mainPage.clickLanguageAutomation();
+
+        LogInPage logInPage = new LogInPage();
+        logInPage.clickAccountButton()
+                .clickLogInButton()
+                .doLogin()
+                .clickLogInInput();
+        MainPage mainPage = new MainPage();
+        mainPage.clickGoToHomeDecor()
                 .clickOnElectronicsContainer()
                 .clickShowAsListButton()
-                .setNumberOfProducts(25)
-                .selectPriceInSortBy ("Price")
-                .clickFilter0_999Price();
+                .setNumberOfProducts(25);
 
         Thread.sleep(3000);
 
 
     }
+    //6
+    @Test
+    public void checkSale() throws InterruptedException {
+        mainPage.clickLanguageAutomation()
+                .clickGoToSale()
+                .clickGridViewInput();
+
+
+//        LogInPage logInPage = new LogInPage();
+//        logInPage.clickAccountButton()
+//                .clickLogInButton()
+//                .doLogin()
+//                .clickLogInInput();
+//        MainPage mainPage = new MainPage();
+//        mainPage.clickGoToHomeDecor()
+//                .clickOnElectronicsContainer()
+//                .clickShowAsListButton()
+//                .setNumberOfProducts(25);
+
+        Thread.sleep(3000);
+
+
+    }
+
 }
 
 
