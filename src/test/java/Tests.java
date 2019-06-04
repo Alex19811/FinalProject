@@ -93,7 +93,7 @@ public class Tests extends BaseTest {
     public void checkSale() throws InterruptedException {
         mainPage.clickLanguageAutomation()
                 .clickGoToSale()
-                .clickGridViewInput();
+
 
 
 //        LogInPage logInPage = new LogInPage();

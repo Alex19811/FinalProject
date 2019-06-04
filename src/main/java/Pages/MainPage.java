@@ -13,6 +13,7 @@ public class MainPage extends BasePage {
     private By goToHomeDecor = By.xpath("//a[contains(@class,'level0') and text()='Home & Decor']");
     //private By goToHomeDecor = By.xpath("//html[@id='top']//nav[@id='nav']//li[@class='level0 nav-4 parent']/a[@href='http://magento.mainacad.com/lesson_12/home-decor.html']");
     private By goToSale = By.xpath("//a[@href='http://magento.mainacad.com/lesson_12/sale.html']");
+   // private By goToLogInPage = By.xpath("//a[@href='http://magento.mainacad.com/lesson_12/sale.html']");
 
     public MainPage() {
 
@@ -38,6 +39,12 @@ public class MainPage extends BasePage {
         getDriver().findElement(goToHomeDecor).click();
         return new HomeAndDecor();
     }
+
+//    public LogInPage clickGoToLogInPage() {        ???????? перехід на LogInPage
+//        getDriver().findElement(goToLogInPage()).click();
+//        return new LogInPage();
+//    }
+
 
 
     public SalePage clickGoToSale() {
