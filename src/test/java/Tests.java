@@ -5,6 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static Pages.BasePage.getDriver;
+
 public class Tests extends BaseTest {
 
     MainPage mainPage;
@@ -23,8 +25,9 @@ public class Tests extends BaseTest {
                 .clickOnElectronicsContainer()
                 .clickShowAsListButton()
                 .setNumberOfProducts(25)
-                .numberPresentProductsOfEegualCounter();
+                .getNumberPresentProducts();
 
+        Assert.assertEquals(getDriver().findElement(productContainer).getSize(), getCountItems);
         Thread.sleep(3000);
     }
 
@@ -72,18 +75,16 @@ public class Tests extends BaseTest {
     //5
     @Test
     public void checkAddToWishlist() throws InterruptedException {
-        mainPage.clickLanguageAutomation()
-                .clickAccountButton()
-                .clickLogInButton()
-                .doLogin()
-                .clickLogInInput()
-                .clickGoToHomeDecorMyDashboardPage();
-
-        HomeAndDecorPage homeAndDecorPage = new HomeAndDecorPage();
-        homeAndDecorPage.clickOnElectronicsContainer()
-                .clickShowAsListButton()
-                .setNumberOfProducts(25);
-        ElectonicsPage electonicsPage = new ElectonicsPage();
+        ElectonicsPage electonicsPage =
+                mainPage.clickLanguageAutomation()
+                        .clickAccountButton()
+                        .clickLogIn()
+                        .fillOutUserNameAndPassword()
+                        .clickLogInButton()
+                        .clickToHomeDecor()
+                        .clickOnElectronicsContainer()
+                        .clickShowAsListButton()
+                        .setNumberOfProducts(25);
         electonicsPage.clickAddToWishlist();
 
 
@@ -109,26 +110,13 @@ public class Tests extends BaseTest {
     public void checkShopingCart() throws InterruptedException {
         mainPage.clickLanguageAutomation()
                 .clickAccountButton()
+                .clickLogIn()
+                .fillOutUserNameAndPassword()
                 .clickLogInButton()
-                .doLogin()
-                .clickLogInInput()
-                .clickGoToHomeDecorMyDashboardPage();
-
-        HomeAndDecorPage homeAndDecorPage = new HomeAndDecorPage();
-        homeAndDecorPage.clickOnElectronicsContainer()
+                .clickToHomeDecor()
+                .clickOnElectronicsContainer()
                 .clickGridViewInputElectronicsPage()
                 .setNumberOfProducts(36);
-
-
-//        ElectonicsPage electonicsPage = new ElectonicsPage();
-//        electonicsPage.clickAddToWishlist();
-
-
-//        MainPage mainPage = new MainPage();
-//        mainPage.clickGoToHomeDecor()
-//                .clickOnElectronicsContainer()
-//                .clickGridViewInputElectronicsPage()
-//                .setNumberOfProducts(36);
 
 
         Thread.sleep(3000);

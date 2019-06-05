@@ -8,9 +8,10 @@ public class ElectonicsPage extends BasePage {
 
     private static By electronicsPageTitle = By.xpath("//html[@id='top']/body/div[@class='wrapper']/div[@class='page']//h1[.='Electronics']");
     private static By showAsListButton = By.xpath("//a[@title='List']");
-    //div[@safeclass~'\bcategory-products\b']/div[1]/div[@safeclass~'\bpager\b']/div[@safeclass~'\bcount-container\b']/div[@safeclass~'\blimiter\b']/select[@title='Results per page']
     private static By showSelection = By.xpath("//select[@title='Results per page']");
-    private static By productList = By.id("products-list");
+    private static By productContainer = By.cssSelector("#products-list .item");
+    private static By countItems = By.xpath("//strong[.='13 Item(s)']");
+
     private static By showSelectionPrice = By.xpath("//select[@title='Sort By']");
     private static By filter0_999Price = By.xpath("//dl[@id='narrow-by-list']/dd[@class='odd']/ol/li[1]");
     private static By gridViewInputElectronicsPage = By.xpath("//html[@id='top']/body");
@@ -52,13 +53,24 @@ public class ElectonicsPage extends BasePage {
 //    }
 
 
-    public ElectonicsPage numberPresentProductsOfEegualCounter() {
-        int count = driver.findElements(productList).size();
+    public int getNumberPresentProducts() {
+        int count = driver.findElements(productContainer).size();
         System.out.println(count);
-        return this;
+        getCounterValue();
+
+        return count;
     }
 
-    //3
+    public int getCounterValue() {
+        int  getCountItems = Integer.parseInt(driver.findElement(countItems).getText().substring(0,2));
+       // System.out.println(" TEST getCounItems = " + getCountItems);
+
+    return getCountItems;
+
+    }
+
+
+       //3
     public ElectonicsPage selectPriceInSortBy(String priceInSortBy) {
         Select select = new Select(getDriver().findElement(showSelectionPrice));
         select.selectByVisibleText(String.valueOf(priceInSortBy));
