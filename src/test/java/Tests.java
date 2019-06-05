@@ -20,14 +20,15 @@ public class Tests extends BaseTest {
 
     @Test
     public void checkItemsCounter() throws InterruptedException {
-        mainPage.clickLanguageAutomation()
+       ElectonicsPage electonicsPage=
+    mainPage.clickLanguageAutomation()
                 .clickGoToHomeDecor()
                 .clickOnElectronicsContainer()
                 .clickShowAsListButton()
-                .setNumberOfProducts(25)
-                .getNumberPresentProducts();
+                .setNumberOfProducts(25);
 
-        Assert.assertEquals(getDriver().findElement(productContainer).getSize(), getCountItems);
+
+        Assert.assertEquals (electonicsPage.getNumberPresentProducts(),electonicsPage.getCounterValue(),"messege");
         Thread.sleep(3000);
     }
 
