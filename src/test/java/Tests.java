@@ -1,7 +1,7 @@
 
-import Pages.LogInPage;
-import Pages.MainPage;
+import Pages.*;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -40,34 +40,35 @@ public class Tests extends BaseTest {
         Thread.sleep(3000);
     }
 
-        //3
-        @Test
-        public void checkSortBy() throws InterruptedException {
-            mainPage.clickLanguageAutomation()
-                    .clickGoToHomeDecor()
-                    .clickOnElectronicsContainer()
-                    .clickShowAsListButton()
-                    .setNumberOfProducts(25)
-                    .selectPriceInSortBy ("Price");
+    //3
+    @Test
+    public void checkSortBy() throws InterruptedException {
+        mainPage.clickLanguageAutomation()
+                .clickGoToHomeDecor()
+                .clickOnElectronicsContainer()
+                .clickShowAsListButton()
+                .setNumberOfProducts(25)
+                .selectPriceInSortBy("Price");
 
-            Thread.sleep(3000);
-        }
+        Thread.sleep(3000);
+    }
 
-            //4
-            @Test
-            public void checkPriceFilter() throws InterruptedException {
-                mainPage.clickLanguageAutomation()
-                        .clickGoToHomeDecor()
-                        .clickOnElectronicsContainer()
-                        .clickShowAsListButton()
-                        .setNumberOfProducts(25)
-                        .selectPriceInSortBy ("Price")
-                        .clickFilter0_999Price();
+    //4
+    @Test
+    public void checkPriceFilter() throws InterruptedException {
+        mainPage.clickLanguageAutomation()
+                .clickGoToHomeDecor()
+                .clickOnElectronicsContainer()
+                .clickShowAsListButton()
+                .setNumberOfProducts(25)
+                .selectPriceInSortBy("Price")
+                .clickFilter0_999Price();
 
-                Thread.sleep(3000);
+        Thread.sleep(3000);
 
 
     }
+
     //5
     @Test
     public void checkAddToWishlist() throws InterruptedException {
@@ -78,45 +79,71 @@ public class Tests extends BaseTest {
                 .clickLogInButton()
                 .doLogin()
                 .clickLogInInput();
-        MainPage mainPage = new MainPage();
-        mainPage.clickGoToHomeDecor()
-                .clickOnElectronicsContainer()
+
+        MyDashboardPage myDashboardPage = new MyDashboardPage();
+        myDashboardPage.clickGoToHomeDecorMyDashboardPage();
+
+        HomeAndDecorPage homeAndDecorPage = new HomeAndDecorPage();
+        homeAndDecorPage.clickOnElectronicsContainer()
                 .clickShowAsListButton()
                 .setNumberOfProducts(25);
+        ElectonicsPage electonicsPage = new ElectonicsPage();
+        electonicsPage.clickAddToWishlist();
+
 
         Thread.sleep(3000);
 
 
     }
+
     //6
     @Test
     public void checkSale() throws InterruptedException {
         mainPage.clickLanguageAutomation()
-                .clickGoToSale();
+                .clickGoToSale()
+                .clickGridViewInput()
+                .clickShowAsListProducts()
+                .setNumberOfProductsSale(36);
+
+        Thread.sleep(3000);
+    }
+
+    //7
+    @Test
+    public void checkShopingCart() throws InterruptedException {
+        mainPage.clickLanguageAutomation();
+
+        LogInPage logInPage = new LogInPage();
+        logInPage.clickAccountButton()
+                .clickLogInButton()
+                .doLogin()
+                .clickLogInInput();
+        MyDashboardPage myDashboardPage = new MyDashboardPage();
+        myDashboardPage.clickGoToHomeDecorMyDashboardPage();
+
+        HomeAndDecorPage homeAndDecorPage = new HomeAndDecorPage();
+        homeAndDecorPage.clickOnElectronicsContainer()
+                .clickGridViewInputElectronicsPage()
+                .setNumberOfProducts(36);
+
+//        ElectonicsPage electonicsPage = new ElectonicsPage();
+//        electonicsPage.clickAddToWishlist();
 
 
-
-//        LogInPage logInPage = new LogInPage();
-//        logInPage.clickAccountButton()
-//                .clickLogInButton()
-//                .doLogin()
-//                .clickLogInInput();
 //        MainPage mainPage = new MainPage();
 //        mainPage.clickGoToHomeDecor()
 //                .clickOnElectronicsContainer()
-//                .clickShowAsListButton()
-//                .setNumberOfProducts(25);
+//                .clickGridViewInputElectronicsPage()
+//                .setNumberOfProducts(36);
+
 
         Thread.sleep(3000);
-
-
     }
 
 }
 
 
-
-   // RegisterPage registerPage = new RegisterPage();
+// RegisterPage registerPage = new RegisterPage();
 //        Assert.assertTrue(registerPage.isUserNamePresent());
 //        Assert.assertTrue(registerPage.isLastNamePresent());
 //        Assert.assertTrue(registerPage.isAddessMailAddPresent());

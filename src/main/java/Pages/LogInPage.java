@@ -6,11 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class LogInPage extends BasePage {
 
-    private By accountButton = By.xpath("//a[@href='#header-account']/span[@class='label']");
-    private By logInButton = By.xpath("//div[@id='header-account']//a[@title='Log In']");
-    private By addressMailAddInput = By.id("email");
-    private By passwordInput = By.id("pass");
-    private By loginInput = By.xpath("//html[@id='top']//button[@id='send2']");
+    private static By accountButton = By.xpath("//a[@href='#header-account']/span[@class='label']");
+    private static By logInButton = By.xpath("//div[@id='header-account']//a[@title='Log In']");
+    private static By addressMailAddInput = By.id("email");
+    private static By passwordInput = By.id("pass");
+    private static By loginInput = By.xpath("//html[@id='top']//button[@id='send2']");
+
 
     public LogInPage clickAccountButton() {
         getDriver().findElement(accountButton).click();
@@ -36,6 +37,7 @@ public class LogInPage extends BasePage {
         getDriver().findElement(loginInput).click();
         return this;
     }
+
 
 }
 
