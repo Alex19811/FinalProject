@@ -12,8 +12,9 @@ public class MainPage extends BasePage {
     private static By SelectLanguage = By.id("select-language");
     private static By goToHomeDecor = By.xpath("//a[contains(@class,'level0') and text()='Home & Decor']");
     //private static By goToHomeDecor = By.xpath("//html[@id='top']//nav[@id='nav']//li[@class='level0 nav-4 parent']/a[@href='http://magento.mainacad.com/lesson_12/home-decor.html']");
+    private static By accountButton = By.xpath("//a[@href='#header-account']/span[@class='label']");
     private static By goToSale = By.xpath("//a[@href='http://magento.mainacad.com/lesson_12/sale.html']");
-    private static By goToLogInPage = By.xpath("//a[@href='http://magento.mainacad.com/lesson_12/sale.html']");
+
 
     public MainPage() {
 
@@ -34,27 +35,20 @@ public class MainPage extends BasePage {
         return this;
     }
 
-
     public HomeAndDecorPage clickGoToHomeDecor() {
         getDriver().findElement(goToHomeDecor).click();
         return new HomeAndDecorPage();
     }
 
-//    public LogInPage clickGoToLogInPage() {        ???????? перехід на LogInPage
-//        getDriver().findElement(goToLogInPage()).click();
-//        return new LogInPage();
-//    }
+    public LogInPage clickAccountButton() {
+        getDriver().findElement(accountButton).click();
+        return new LogInPage();
+    }
+
 
     public SalePage clickGoToSale() {
         getDriver().findElement(goToSale).click();
         return new SalePage();
-    }
-
-
-//????????
-    public LogInPage clickGoToLoginPage() {
-        getDriver().findElement(goToLogInPage).click();
-        return new LogInPage();
     }
 
 

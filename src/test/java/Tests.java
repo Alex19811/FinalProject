@@ -72,16 +72,12 @@ public class Tests extends BaseTest {
     //5
     @Test
     public void checkAddToWishlist() throws InterruptedException {
-        mainPage.clickLanguageAutomation();
-
-        LogInPage logInPage = new LogInPage();
-        logInPage.clickAccountButton()
+        mainPage.clickLanguageAutomation()
+                .clickAccountButton()
                 .clickLogInButton()
                 .doLogin()
-                .clickLogInInput();
-
-        MyDashboardPage myDashboardPage = new MyDashboardPage();
-        myDashboardPage.clickGoToHomeDecorMyDashboardPage();
+                .clickLogInInput()
+                .clickGoToHomeDecorMyDashboardPage();
 
         HomeAndDecorPage homeAndDecorPage = new HomeAndDecorPage();
         homeAndDecorPage.clickOnElectronicsContainer()
@@ -92,7 +88,6 @@ public class Tests extends BaseTest {
 
 
         Thread.sleep(3000);
-
 
     }
 
@@ -108,23 +103,22 @@ public class Tests extends BaseTest {
         Thread.sleep(3000);
     }
 
-    //7
+//7
+
     @Test
     public void checkShopingCart() throws InterruptedException {
-        mainPage.clickLanguageAutomation();
-
-        LogInPage logInPage = new LogInPage();
-        logInPage.clickAccountButton()
+        mainPage.clickLanguageAutomation()
+                .clickAccountButton()
                 .clickLogInButton()
                 .doLogin()
-                .clickLogInInput();
-        MyDashboardPage myDashboardPage = new MyDashboardPage();
-        myDashboardPage.clickGoToHomeDecorMyDashboardPage();
+                .clickLogInInput()
+                .clickGoToHomeDecorMyDashboardPage();
 
         HomeAndDecorPage homeAndDecorPage = new HomeAndDecorPage();
         homeAndDecorPage.clickOnElectronicsContainer()
                 .clickGridViewInputElectronicsPage()
                 .setNumberOfProducts(36);
+
 
 //        ElectonicsPage electonicsPage = new ElectonicsPage();
 //        electonicsPage.clickAddToWishlist();

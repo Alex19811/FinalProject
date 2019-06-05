@@ -6,17 +6,17 @@ import org.openqa.selenium.WebElement;
 
 public class LogInPage extends BasePage {
 
-    private static By accountButton = By.xpath("//a[@href='#header-account']/span[@class='label']");
+    private static By goToHomeDecorMyDashboardPage = By.xpath("//html[@id='top']//nav[@id='nav']//li[@class='level0 nav-4 parent']/a[@href='http://magento.mainacad.com/lesson_12/home-decor.html']");
     private static By logInButton = By.xpath("//div[@id='header-account']//a[@title='Log In']");
     private static By addressMailAddInput = By.id("email");
     private static By passwordInput = By.id("pass");
     private static By loginInput = By.xpath("//html[@id='top']//button[@id='send2']");
 
-
-    public LogInPage clickAccountButton() {
-        getDriver().findElement(accountButton).click();
-        return this;
+    public MyDashboardPage clickGoToHomeDecorMyDashboardPage() {
+        getDriver().findElement(goToHomeDecorMyDashboardPage).click();
+        return new MyDashboardPage();
     }
+
 
     public LogInPage clickLogInButton() {
         getDriver().findElement(logInButton).click();

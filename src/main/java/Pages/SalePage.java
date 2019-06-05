@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 public class SalePage extends BasePage {
 
     private static By gridViewInput = By.xpath("//div[@id='header-account']//a[@title='Log In']");
-    private static By showAsListProducts = By.xpath("//div[@safeclass~'\\bcategory-products\\b']/div[1]/div[@safeclass~'\\bpager\\b']/div[@safeclass~'\\bcount-container\\b']/div[@safeclass~'\\blimiter\\b']/select[@title='Results per page']");
+    private static By showAsListProducts = By.xpath("//html[@id='top']/body/div[@class='wrapper']/div[@class='page']/div[2]/div[@class='main']//div[@class='category-products']/div[@class='toolbar']/div[@class='sorter']/p[@class='view-mode']/strong[@title='Grid']");
     private static By showSelectionProducts = By.xpath("//select[@title='Results per page']");
 
     public SalePage clickGridViewInput() {
